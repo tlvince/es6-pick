@@ -1,0 +1,52 @@
+{
+  "name": "es6-pick",
+  "description": "Lodash pick in ES6",
+  "main": "index.js",
+  "scripts": {
+    "tap": "tap 'test.js'",
+    "pretest": "standard",
+    "test": "npm run tap",
+    "test:coverage": "npm run -s tap -- --cov --coverage-report=lcov",
+    "test:watch": "chokidar '**/*.js' -c 'npm run -s tap' --initial -i node_modules -i coverage",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlvince/es6-pick.git"
+  },
+  "keywords": [
+    "es6",
+    "pick",
+    "es2015"
+  ],
+  "author": "Tom Vincent <git@tlvince.com> (https://tlvince.com)",
+  "engines": {
+    "node": ">=6"
+  },
+  "bugs": {
+    "url": "https://github.com/tlvince/es6-pick/issues"
+  },
+  "homepage": "https://github.com/tlvince/es6-pick#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chokidar-cli": "1.2.0",
+    "ghooks": "1.3.2",
+    "standard": "8.5.0",
+    "tap": "8.0.0",
+    "validate-commit-msg": "2.8.2",
+    "semantic-release": "^4.3.5"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js"
+  ],
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-push": "npm test"
+    }
+  },
+  "license": "MIT"
+}
