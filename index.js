@@ -1,3 +1,3 @@
 module.exports = (o, ...props) => (
-  Object.assign({}, ...props.map(prop => ({[prop]: o[prop]})))
+  props.reduce((result, name) => ((result[name] = o[name]) && result), {})
 )
